@@ -1,0 +1,66 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:HeadlessFS.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="450"
+        x:Class="HeadlessFS.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="HeadlessFS"
+        FontFamily="Consolas" Width="1500" Height="665" CanResize="False">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Background="Black" Grid.Row="0" Orientation="Horizontal">
+            <Button Content="Make Image" Height="30" Width="100" Margin="0 0 15 0" Command="{Binding CreateImageCommand}"/>
+            <Button Content="Load Image" Height="30" Width="100" Margin="0 0 30 0" Command="{Binding LoadImageCommand}"/>
+            
+            
+            <Button Content="Server" Command="{Binding ToggleServerCommand}"></Button>
+            <Button Content="Reload" Command="{Binding RefreshCommand}"></Button>
+            <Button Content="Format" Command="{Binding FormatCommand}"></Button>
+
+            <StackPanel Orientation="Horizontal" Margin="10 0 0 0">
+                <TextBlock    Width="50" VerticalAlignment="Center" Text="Block"></TextBlock>
+                <NumericUpDown  Height="28" Minimum="0" Maximum="4095" Value="{Binding CurrentBlock}"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="10 0 25 0">
+                <TextBlock    Width="50" VerticalAlignment="Center" Text="Page"></TextBlock>
+                <NumericUpDown  Height="28" Minimum="0" Maximum="63" Value="{Binding CurrentPage}"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <ListBox Grid.Row="1" Margin="0 10 0 0">
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[0]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[1]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[2]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[3]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[4]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[5]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[6]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[7]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[8]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[9]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[10]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[11]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[12]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[13]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[14]}"/></ListBoxItem>
+            <ListBoxItem> <TextBlock Text="{Binding CurrentData[15]}"/></ListBoxItem>
+        </ListBox>
+        
+        <!-- <TextBlock Grid.Row="1" TextWrapping="Wrap" ></TextBlock> -->
+        
+    </Grid>
+    
+    
+
+</Window>

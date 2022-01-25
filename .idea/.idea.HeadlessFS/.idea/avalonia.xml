@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="HeadlessFS/App.axaml" value="HeadlessFS/HeadlessFS.csproj" />
+        <entry key="HeadlessFS/Views/MainWindow.axaml" value="HeadlessFS/HeadlessFS.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
